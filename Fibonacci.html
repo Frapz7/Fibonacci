@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci</title>
+</head>
+<body>
+    <form>
+        <label>Fibonacci serisi</label><br>
+        <input type="number" id="say" placeholder="Adet giriniz"><br>
+        <button type="button" id="buton">Getir</button>
+    </form>
+    <p id="sonuc"></p>
+    <script>
+        //1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+        document.getElementById("buton").onclick= function(){
+            let sonuc = document.getElementById("sonuc");
+            let n= document.getElementById("say").value;
+            let guncel=1;
+            let eski=0;
+            if(n==0){sonuc.innerHTML+=0}
+            if(n>=1){sonuc.innerHTML=1}
+
+            let sayac=n-1;
+            while(sayac>0){
+                guncel=guncel+eski;
+                eski=guncel-eski;
+                sayac--;
+                sonuc.innerHTML+="-"+guncel;
+            }
+        }
+    </script>
+
+</body>
+</html>
